@@ -1,9 +1,7 @@
-from logging import exception
 import discord
 from discord.ext import commands
 from discord.ext.commands import MissingPermissions
 from cryptography.fernet import Fernet
-import asyncio
 from os.path import exists
 
 if not exists('filekey.key'):
@@ -23,6 +21,8 @@ else:
     decrypted_key = str(decrypted_key)
     decrypted_key = decrypted_key.lstrip("b'").rstrip("\\n'")
 
+
+# Make it easier for me to call functions
     bot = discord.Bot()
 
     @bot.event
